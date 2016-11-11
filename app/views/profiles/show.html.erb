@@ -1,0 +1,7 @@
+<h1>Profile Show Page</h1>
+<p>
+  <%= @profile.account_name %>
+  <%= @profile.about %>
+</p>
+<%= link_to 'Edit', edit_profile_path(@profile) if current_user == @profile.user%>
+<%= link_to 'Back', profiles_path %>

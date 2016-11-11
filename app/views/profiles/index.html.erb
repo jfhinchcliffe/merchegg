@@ -1,0 +1,8 @@
+<h1>Profiles Index Page</h1>
+
+<% @profiles.each do |profile| %>
+  <p>
+    <%= link_to profile.account_name, profile_path(profile) %>
+    <%= profile.about %>
+  </p>
+<% end %>

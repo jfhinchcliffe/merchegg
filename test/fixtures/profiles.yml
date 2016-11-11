@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  account_name: MyString
+  plan_type: MyString
+  about: MyText
+
+two:
+  user: two
+  account_name: MyString
+  plan_type: MyString
+  about: MyText
