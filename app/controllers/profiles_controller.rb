@@ -2,7 +2,7 @@ class ProfilesController < ApplicationController
   before_action :set_profile, only:[:show, :edit, :update]
 
   def index
-    @profiles = Profile.all
+    @profiles = Profile.where.not(account_name: nil)
   end  
 
   def edit
