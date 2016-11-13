@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.3.1'
 
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'twitter-bootstrap-rails'
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

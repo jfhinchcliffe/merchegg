@@ -3,6 +3,6 @@
 <% @profiles.each do |profile| %>
   <p>
     <%= link_to profile.account_name, profile_path(profile) %>
-    <%= profile.about %>
+    <%= truncate(profile.about, length: 100) %>
   </p>
 <% end %>

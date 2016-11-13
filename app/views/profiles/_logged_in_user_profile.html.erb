@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 text-center">
+    <h3>Plan Type</h3>
+  </div>  
+</div>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 text-center">
+    <h4><%= @profile.plan_type.capitalize %> </h4>
+    <%= link_to 'Upgrade to PRO!', payment_profile_path, class: 'btn btn-default' %>
+  </div>  
+</div>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= link_to 'Edit', edit_profile_path(@profile) %>
+  </div>  
+</div>

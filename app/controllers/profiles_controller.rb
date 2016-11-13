@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_action :set_profile, only:[:show, :edit, :update]
+  before_action :set_profile, only:[:show, :edit, :update, :payment]
 
   def index
     @profiles = Profile.where.not(account_name: nil)
