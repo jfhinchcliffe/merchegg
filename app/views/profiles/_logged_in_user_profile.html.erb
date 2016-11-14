@@ -1,22 +1,18 @@
 <div class="row">
-  <div class="col-md-6 col-md-offset-3 text-center">
-    <h3>Plan Type</h3>
-  </div>  
-</div>
-<div class="row">
-  <div class="col-md-6 col-md-offset-3 text-center">
-    <h4><%= @profile.plan_type.capitalize %> </h4>
-    <h4>Expires <%= format_date(@profile.plan_expiration) if @profile.plan_type == 'pro' %> </h4>
+  <div class="col-md-4 col-md-offset-2">
+    <h3>Plan Type: <%= @profile.plan_type.capitalize %>
+    <h4><%= "Expires: #{format_date(@profile.plan_expiration)}" if @profile.plan_type == 'pro' %> </h4>
     <%= render 'payments/new' %>
   </div>  
-</div>
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= link_to 'Check Previous Payments', payments_path %>
-  </div>  
-</div>
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= link_to 'Edit', edit_profile_path(@profile) %>
-  </div>  
+
+
+  <div class="col-md-4">
+    <h3>Account Functionality</h3>
+    <p>
+      <%= link_to 'Edit Profile Information', edit_profile_path(@profile), class: 'btn btn-default' %>
+    </p>
+    <p>
+      <%= link_to 'Check My Previous Payments', payments_path, class: 'btn btn-default' %>
+    </p>  
+  </div>   
 </div>

@@ -9,10 +9,12 @@
       <span>Add a month of Pro Membership: $5.00 AU</span>
     </label>
   </article>
-
+  <div class='text-center'>
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="A month's subscription"
           data-amount="500"
           data-locale="auto"></script>
+             <%= link_to 'About MerchEgg Plans', about_path %>
+  </div>           
 <% end %>

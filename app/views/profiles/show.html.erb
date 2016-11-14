@@ -1,21 +1,12 @@
 <div class="row">
-  <div class="col-md-6 col-md-offset-3 text-center">
+  <div class="jumbotron">
     <h1><%= @profile.account_name %></h1>
+    <p><%= @profile.about %></p>
   </div>
 </div>
-<div class="row text-center">  
-  <div class="col-md-6 col-md-offset-3">
-    <h3>About</h3>
-  </div>  
-</div>
-<div class="row">  
-  <div class="col-md-6 col-md-offset-3">   
-    <%= @profile.about %></h3>
-  </div>  
-</div>
-  <%= render 'logged_in_user_profile' if current_user == @profile.user%>
+
+<%= render 'logged_in_user_profile' if current_user == @profile.user%>
+
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">  
     <%= link_to 'Back', profiles_path %>
-  </div>
 </div>   
