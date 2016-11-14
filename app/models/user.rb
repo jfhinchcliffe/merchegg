@@ -9,5 +9,11 @@ class User < ApplicationRecord
 
   def filled_in_account_name?
     self.profile.account_name != nil
-  end         
+  end
+
+  private
+
+  def create_profile
+    Profile.create(user_id: self.id) 
+  end
 end

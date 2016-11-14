@@ -3,7 +3,7 @@ class Profile < ApplicationRecord
   after_initialize :init
 
   def init
-    self.plan_type ||= 'basic'
+    self.plan_type ||= 'basic' 
   end
 
   def subscribe
