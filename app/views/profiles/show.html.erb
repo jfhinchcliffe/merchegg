@@ -5,7 +5,7 @@
   </div>
 </div>
 <div class="row">
-  <center><%= image_tag(@profile.picture_url(:thumbnail)) %></center>
+  <center><%= image_tag(@profile.picture_url(:standard)) %></center>
 </div>  
 <%= render 'logged_in_user_profile' if current_user == @profile.user%>
 
