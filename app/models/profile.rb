@@ -1,4 +1,5 @@
 class Profile < ApplicationRecord
+  mount_uploader :picture, PictureUploader
   belongs_to :user
   after_initialize :init
   validates_uniqueness_of :account_name

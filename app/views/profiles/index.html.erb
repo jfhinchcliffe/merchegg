@@ -6,5 +6,6 @@
   <p>
     <%= link_to profile.account_name, profile_path(profile) %>
     <%= truncate(profile.about, length: 100) %>
+    <%= image_tag(profile.picture_url(:thumbnail)) %>
   </p>
 <% end %>

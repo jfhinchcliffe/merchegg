@@ -4,7 +4,9 @@
     <p><%= @profile.about %></p>
   </div>
 </div>
-
+<div class="row">
+  <center><%= image_tag(@profile.picture_url(:thumbnail)) %></center>
+</div>  
 <%= render 'logged_in_user_profile' if current_user == @profile.user%>
 
 <div class="row">
