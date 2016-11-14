@@ -2,7 +2,11 @@ class ProfilesController < ApplicationController
   before_action :set_profile, only:[:show, :edit, :update, :payment]
 
   def index
-    @profiles = Profile.where.not(account_name: nil)
+    if params[:search]
+      @profiles = Profile.search(params[:search][:query])
+    else
+      @profiles = Profile.all
+    end  
   end
 
   def new

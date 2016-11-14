@@ -1,0 +1,4 @@
+<%= simple_form_for :search,  url: profiles_path , :method => :get do |f| %>
+    <%= f.input :query, :autofocus => true %>
+    <%= f.submit "Search" %>
+<% end %>

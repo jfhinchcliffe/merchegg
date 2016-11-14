@@ -9,6 +9,10 @@ class Profile < ApplicationRecord
     self.plan_type ||= 'basic' 
   end
 
+  def self.search(pattern)
+    where('account_name LIKE ?', "%#{pattern}%")
+  end
+
   def subscribe
     self.update(plan_type: 'pro')
     if self.plan_expiration

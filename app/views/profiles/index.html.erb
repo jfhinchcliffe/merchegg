@@ -1,5 +1,7 @@
 <h1>Profiles Index Page</h1>
 
+<%= render 'profiles/profile_search' %>
+
 <% @profiles.each do |profile| %>
   <p>
     <%= link_to profile.account_name, profile_path(profile) %>
