@@ -28,6 +28,9 @@ def create
 
   @payment = current_user.payments.new(description: charge[:description], amount: charge[:amount], stripe_payment_id: charge[:id])
   @payment.save
+  current_user.profile.subscribe
+
+  
   # later, put logic in to set a 'subscribed to' value for user
   #also, need to update users plan type to 'pro'
 
@@ -35,5 +38,7 @@ def create
     flash[:error] = e.message
     redirect_to new_payment_path
   end
+
+  private
 
 end

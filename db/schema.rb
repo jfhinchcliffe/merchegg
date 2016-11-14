@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161113112748) do
+ActiveRecord::Schema.define(version: 20161113225400) do
 
   create_table "payments", force: :cascade do |t|
     t.string   "description"
@@ -27,8 +27,9 @@ ActiveRecord::Schema.define(version: 20161113112748) do
     t.string   "account_name"
     t.string   "plan_type"
     t.text     "about"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.datetime "plan_expiration"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 

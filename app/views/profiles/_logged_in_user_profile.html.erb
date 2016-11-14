@@ -6,7 +6,7 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3 text-center">
     <h4><%= @profile.plan_type.capitalize %> </h4>
-    <%#= link_to 'Upgrade to PRO!', payment_profile_path, class: 'btn btn-default' %>
+    <h4>Expires <%= format_date(@profile.plan_expiration) if @profile.plan_type == 'pro' %> </h4>
     <%= render 'payments/new' %>
   </div>  
 </div>
