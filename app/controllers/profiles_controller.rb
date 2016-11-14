@@ -3,6 +3,21 @@ class ProfilesController < ApplicationController
 
   def index
     @profiles = Profile.where.not(account_name: nil)
+  end
+
+  def new
+    redirect_to profiles_path if current_user.profile
+    @profile = Profile.new
+  end
+
+  def create
+    @profile = Profile.new(profile_params)
+    @profile.user_id = current_user.id
+    if @profile.save
+      redirect_to @profile
+    else
+      render 'new'
+    end
   end  
 
   def edit

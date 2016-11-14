@@ -1,6 +1,9 @@
 class Profile < ApplicationRecord
   belongs_to :user
   after_initialize :init
+  validates_uniqueness_of :account_name
+  validates :account_name,  presence: true, format: { with: /\A[a-z\d]*\Z/i, message: "only allows letters and numbers" }, length: { in: 6..20 }
+  validates :about, length: { maximum: 500, too_long: "%{count} characters is the maximum allowed" }
 
   def init
     self.plan_type ||= 'basic' 
