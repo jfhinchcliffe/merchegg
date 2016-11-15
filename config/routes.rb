@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'payments/new'
 
   get 'payments/create'
@@ -10,6 +11,8 @@ Rails.application.routes.draw do
   root 'static_pages#index'
 
   resources :profiles
+  resources :boxes
+    
   resources :payments, only: [:index, :new, :create]
 
   devise_for :users

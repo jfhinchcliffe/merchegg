@@ -1,0 +1,9 @@
+<h1>Boxes#show</h1>
+<p>Find me in app/views/boxes/show.html.erb</p>
+<p>
+  <%= @box.title %>
+  <%= @box.description %>
+  <%= @box.user.profile.account_name %>
+</p>
+
+<%= link_to "Boxes", boxes_path %>

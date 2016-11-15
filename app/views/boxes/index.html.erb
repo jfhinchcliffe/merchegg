@@ -1,0 +1,23 @@
+<%= @boxes.count %>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th colspan="3">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @boxes.each do |box| %>
+    <tr>
+      <td><%= box.title %></td>
+      <td><%= box.description %></td>
+      <td><%= link_to 'Show', box_path(box) %></td>
+      <td><%= link_to 'Edit', edit_box_path(box) %></td>
+      <td></td>
+    </tr>  
+    <% end %>
+  </tbody>
+
+</table>
+<td><%= link_to 'New Box', new_box_path %></td>
