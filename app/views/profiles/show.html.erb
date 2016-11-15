@@ -10,5 +10,5 @@
 <%= render 'logged_in_user_profile' if current_user == @profile.user%>
 
 <div class="row">
-    <%= link_to 'Back', profiles_path %>
-</div>   
+  <%= render @profile.user.boxes %>
+</div>
