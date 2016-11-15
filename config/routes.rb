@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   root 'static_pages#index'
 
   resources :profiles
-  resources :boxes
+  resources :boxes do
+    resources :items
+  end  
     
   resources :payments, only: [:index, :new, :create]
 

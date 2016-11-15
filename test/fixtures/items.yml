@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  box: one
+  name: MyString
+  item_download_path: MyString
+
+two:
+  box: two
+  name: MyString
+  item_download_path: MyString
