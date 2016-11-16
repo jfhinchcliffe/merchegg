@@ -1,5 +1,5 @@
 <%= simple_form_for [@box, @item] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :download_path, as: :file %>
-  <%= f.button :submit %>
+  <%= f.input :name, label: 'Name',label_html: { class: 'h3' } %>
+  <%= f.input :download_path, as: :file, label: 'File', input_html: { class: 'btn btn-block btn-info' }, label_html: { class: 'h3 center' } %>
+  <%= f.button :submit, class: 'btn-block btn-primary' %>
 <% end %>

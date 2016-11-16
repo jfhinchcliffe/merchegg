@@ -1,9 +1,33 @@
-<h1>Boxes#show</h1>
-<p>Find me in app/views/boxes/show.html.erb</p>
-<p>
-  <%= @box.title %>
-  <%= @box.description %>
-  <%= @box.user.profile.account_name %>
-</p>
+<div class="row">
+  <div class="jumbotron">
+    <h1><%= @box.title %></h1>
+    <p><%= @box.description %></p>
+    <p>By <%= @box.user.profile.account_name %></p>
+  </div>
+</div>
 
-<%= link_to "Boxes", boxes_path %>
+
+<div class="row col-md-6 col-md-offset-3 ">
+  <table class="table table-hover text-center">
+  <thead>
+    <tr>
+      <th class="text-center"><h2>File Name</h2></th>
+      <th class="text-center"><h2>Download</h2></th>  
+    </tr>
+  </thead>
+  <tbody>
+    <% @box.items.each do |item| %>
+    <tr>
+      <td><h4><%= item.name %></h4></td>
+      <td><%= link_to 'Download', "#{item.download_path}", download: "data", class: 'btn btn-primary' %></td>
+      <td></td>
+    </tr>  
+    <% end %>
+  </tbody>
+
+</table>
+<p><%= link_to 'New Item', new_box_item_path(@box) %></p>
+<p><%= link_to "User Boxes", boxes_path %></p>
+</div>
+
+
