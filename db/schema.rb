@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161116023140) do
+ActiveRecord::Schema.define(version: 20161116230415) do
 
   create_table "boxes", force: :cascade do |t|
     t.integer  "user_id"
@@ -19,6 +19,15 @@ ActiveRecord::Schema.define(version: 20161116023140) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["user_id"], name: "index_boxes_on_user_id"
+  end
+
+  create_table "codes", force: :cascade do |t|
+    t.integer  "box_id"
+    t.string   "code"
+    t.boolean  "expired",    default: true
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.index ["box_id"], name: "index_codes_on_box_id"
   end
 
   create_table "items", force: :cascade do |t|

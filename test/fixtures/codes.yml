@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  box: one
+  code: MyString
+  expired: false
+
+two:
+  box: two
+  code: MyString
+  expired: false

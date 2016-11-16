@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'codes/index'
+
   get 'payments/new'
 
   get 'payments/create'
@@ -13,6 +15,7 @@ Rails.application.routes.draw do
   resources :profiles
   resources :boxes do
     resources :items
+    resources :codes
   end  
     
   resources :payments, only: [:index, :new, :create]
