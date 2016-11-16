@@ -40,7 +40,7 @@ class ItemsController < ApplicationController
     end   
 
     def item_params
-      params.require(:item).permit(:name, :item_download_path_id)
+      params.require(:item).permit(:name, :download_path)
     end  
 
 end
