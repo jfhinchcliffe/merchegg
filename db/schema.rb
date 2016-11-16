@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161115051311) do
+ActiveRecord::Schema.define(version: 20161116013024) do
 
   create_table "boxes", force: :cascade do |t|
     t.integer  "user_id"
@@ -24,9 +24,9 @@ ActiveRecord::Schema.define(version: 20161115051311) do
   create_table "items", force: :cascade do |t|
     t.integer  "box_id"
     t.string   "name"
-    t.string   "item_download_path"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.string   "item_download_path_id"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
     t.index ["box_id"], name: "index_items_on_box_id"
   end
 
