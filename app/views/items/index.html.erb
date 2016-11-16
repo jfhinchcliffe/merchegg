@@ -1,6 +1,8 @@
 Items
 <%= p %>
 <% @items.each do |item| %>
-  <%= item.name %>
-  <%= item.download_path %>
+  <p>
+    <%= item.name %>
+    <%= link_to 'Download', "#{item.download_path}", download: "data" %>
+  </p>  
 <% end %>  
