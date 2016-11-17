@@ -1,0 +1,2 @@
+module UserCodedBoxesHelper
+end

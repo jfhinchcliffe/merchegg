@@ -1,0 +1,7 @@
+class UserCodedBoxesController < ApplicationController
+
+  def new(box, user)
+    UserCodedBox.create(user_id: user.id, box_id: box.id)
+  end
+
+end

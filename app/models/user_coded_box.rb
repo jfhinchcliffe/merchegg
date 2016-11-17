@@ -1,0 +1,3 @@
+class UserCodedBox < ApplicationRecord
+
+end
