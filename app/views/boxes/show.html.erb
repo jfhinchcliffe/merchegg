@@ -19,7 +19,7 @@
     <%= f.input :code, :autofocus => true %>
     <%= f.submit "Check Code" %>
   <% end %>
-  <% if UserCodedBox.exists?(user_id: current_user.id, box_id: @box.id) %>
+  <% if UserCodedBox.exists?(user_id: current_user.id, box_id: @box.id) || @box.user_id == current_user.id %>
     <tbody>
       <% @box.items.each do |item| %>
       <tr>

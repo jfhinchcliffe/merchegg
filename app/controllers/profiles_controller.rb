@@ -18,6 +18,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.new(profile_params)
     @profile.user_id = current_user.id
     if @profile.save
+      flash[:notice] = 'Profile was created'
       redirect_to @profile
     else
       render 'new'

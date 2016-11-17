@@ -15,12 +15,12 @@ class BoxesController < ApplicationController
     if params[:code]
       found_code = @box.codes.find_by(code: params[:code][:code], expired: false)
       if found_code
-        flash.now[:notice] = "Code Found"
+        flash.now[:notice] = "Code found and added to account"
         found_code.expired = true
         found_code.save
         UserCodedBox.create(user_id: current_user.id, box_id: @box.id)
       else
-        flash.now[:notice] = "Code Not Found"
+        flash.now[:danger] = "Invalid code"
       end
     end
   end
@@ -33,6 +33,7 @@ class BoxesController < ApplicationController
     @box = Box.new(box_params)
     @box.user_id = current_user.id
     if @box.save
+      flash[:notice] = 'Box has been created'
       redirect_to @box
     else
       render 'new'
@@ -59,7 +60,4 @@ class BoxesController < ApplicationController
       @box = Box.find(params[:id])
     end
 
-    def check_code(code, box)
-      
-    end 
 end
