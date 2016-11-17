@@ -15,6 +15,10 @@
       <th class="text-center"><h2>Download</h2></th>  
     </tr>
   </thead>
+  <%= simple_form_for :code,  url: box_path(@box) , :method => :get do |f| %>
+    <%= f.input :code, :autofocus => true %>
+    <%= f.submit "Check Code" %>
+  <% end %>
   <tbody>
     <% @box.items.each do |item| %>
     <tr>

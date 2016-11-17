@@ -11,6 +11,9 @@
   <body>
     <div class="container">
       <%= render 'layouts/navbar' %>
+      <% flash.each do |name, msg| -%>
+        <%= content_tag :div, msg, class: name %>
+      <% end -%>
       <%= yield %>
     </div>
   </body>

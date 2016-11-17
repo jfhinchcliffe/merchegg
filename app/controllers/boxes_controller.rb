@@ -12,6 +12,17 @@ class BoxesController < ApplicationController
 
   def show
     @box = Box.find(params[:id])
+    if params[:code]
+      found_code = @box.codes.find_by(code: params[:code][:code], expired: false)
+      if found_code
+        flash.now[:notice] = "Code Found"
+        found_code.expired = true
+        found_code.save
+        UserCodedBox.create(user_id: current_user, box_id: @box.id)
+      else
+        flash.now[:notice] = "Code Not Found"
+      end
+    end
   end
 
   def edit
@@ -47,4 +58,8 @@ class BoxesController < ApplicationController
     def set_box
       @box = Box.find(params[:id])
     end
+
+    def check_code(code, box)
+      
+    end 
 end
