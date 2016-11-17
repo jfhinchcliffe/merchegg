@@ -19,17 +19,18 @@
     <%= f.input :code, :autofocus => true %>
     <%= f.submit "Check Code" %>
   <% end %>
-  <tbody>
-    <% @box.items.each do |item| %>
-    <tr>
-      <td><h4><%= item.name %></h4></td>
-      <td><%= link_to 'Download', "#{item.download_path}", download: "data", class: 'btn btn-primary' %></td>
-      <td></td>
-    </tr>  
-    <% end %>
-  </tbody>
-
-</table>
+  <% if UserCodedBox.exists?(user_id: current_user.id, box_id: @box.id) %>
+    <tbody>
+      <% @box.items.each do |item| %>
+      <tr>
+        <td><h4><%= item.name %></h4></td>
+        <td><%= link_to 'Download', "#{item.download_path}", download: "data", class: 'btn btn-primary' %></td>
+        <td></td>
+      </tr>  
+      <% end %>
+    </tbody>
+  </table>
+<% end %>  
 <p><%= link_to 'New Item', new_box_item_path(@box) %></p>
 <p><%= link_to "User Boxes", boxes_path %></p>
 </div>

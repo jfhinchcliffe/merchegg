@@ -18,7 +18,7 @@ class BoxesController < ApplicationController
         flash.now[:notice] = "Code Found"
         found_code.expired = true
         found_code.save
-        UserCodedBox.create(user_id: current_user, box_id: @box.id)
+        UserCodedBox.create(user_id: current_user.id, box_id: @box.id)
       else
         flash.now[:notice] = "Code Not Found"
       end
