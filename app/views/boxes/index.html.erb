@@ -1,9 +1,10 @@
-<%= @boxes.count %>
+Total Boxes Used: <%= @boxes.count %>
 <table class="table table-hover">
   <thead>
     <tr>
       <th>Title</th>
       <th>Description</th>
+      <th>Codes Used</th>
       <th colspan="3">Actions</th>
     </tr>
   </thead>
@@ -11,7 +12,8 @@
     <% @boxes.each do |box| %>
     <tr>
       <td><%= box.title %></td>
-      <td><%= box.description %></td>
+      <td><%= truncate(box.description, length: 100) %></td>
+      <td><%= box.codes.used.count %> / <%= box.codes.count %></td>
       <td><%= link_to 'Show', box_path(box) %></td>
       <td><%= link_to 'Edit', edit_box_path(box) %></td>
       <td></td>

@@ -3,7 +3,7 @@ class BoxesController < ApplicationController
   before_action :set_box, only:[:show, :edit, :update, :payment]
 
   def index
-    @boxes = current_user.boxes.all
+    @boxes = current_user.boxes.all.includes(:codes)
   end  
 
   def new
