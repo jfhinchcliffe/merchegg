@@ -1,4 +1,4 @@
 class Code < ApplicationRecord
   belongs_to :box
-  scope :used, -> { where(expired: true) }
+  scope :used, -> { where(expired: false) }
 end
