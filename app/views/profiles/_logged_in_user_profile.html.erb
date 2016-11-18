@@ -8,17 +8,11 @@
 
 
   <div class="col-md-4">
-    <h3>Account Functionality</h3>
-    <p>
-      <%= link_to 'Add New Box', new_box_path, class: 'btn btn-default' %>
-      <%= link_to 'Manage Boxes', boxes_path, class: 'btn btn-default' %>
-    </p> 
-    <p>
-      <%= link_to 'Edit Profile Information', edit_profile_path(@profile), class: 'btn btn-default' %>
-    </p>
-    <p>
-      <%= link_to 'Check My Previous Payments', payments_path, class: 'btn btn-default' %>
-    </p>  
+    <h3>Admin Functions</h3>
+      <%= link_to 'Add New Box', new_box_path, class: 'btn btn-block btn-primary' %>
+      <%= link_to 'Manage Boxes', boxes_path, class: 'btn btn-block btn-primary' %> 
+      <%= link_to 'Edit Profile Information', edit_profile_path(@profile), class: 'btn btn-block btn-primary' %>
+      <%= link_to 'Check My Previous Payments', payments_path, class: 'btn btn-block btn-primary' %>  
   </div>   
 </div>
 <div class="row text-center"> 

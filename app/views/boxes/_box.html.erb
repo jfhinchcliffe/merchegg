@@ -1,10 +1,5 @@
-<div class='col-md-4 text-center'>
-  <div class="thumbnail">
-    <img src="http://placekitten.com/200/200" alt="...">
-    <div class="caption">
-      <h3><%= box.title %></h3>
-      <p><%= box.description %></p>
-      <p><%= link_to 'Open Box', box_path(box), class: 'btn btn-primary' %>
-    </div>
-  </div> 
-</div>  
+<div class='profile-card'>
+  <h2><%= link_to box.title, box_path(box) %></h2>
+  <p><%= box.description %></p>
+</div>
+<hr>

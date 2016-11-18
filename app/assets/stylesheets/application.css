@@ -19,8 +19,9 @@
    font-family: 'Titillium Web', sans-serif;
  }
 
- .jumbotron{
-  /*background-color: #FFBD7D;*/
+ .jumbotron img {
+  border-radius: 100%;
+  border: 1px solid black;
 }
 
 .profile-card {
