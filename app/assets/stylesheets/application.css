@@ -30,14 +30,51 @@
 
 .profile-card p {
   padding-right: 150px;
-  height: 80px;
+  height: 100px;
 }
 
 .profile-card img {
   position: absolute;
-  top: 0px;
+  top: 20px;
   right: 0px;
   height: 120px;
+  width: 120px;
   border-radius: 100%;
   border: 1px solid slategrey;
+}
+
+.front-page{
+  background-color: black;
+  background: url(http://res.cloudinary.com/hinchy/image/upload/v1479443910/me_bg_nkvpmy.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.navbar-default {
+  background-color: rgba(0, 0, 0, 0.00);
+  border: 0;
+}
+
+.front-page .row {
+  top: 30%;
+}
+
+.front-page .title {
+  color: antiquewhite;
+  padding: 2em;
+  font-family: 'Permanent Marker', sans-serif; 
+  letter-spacing: 3px;
+}
+
+.navbar-brand {
+  font-family: 'Permanent Marker', sans-serif; 
+  letter-spacing: 2px;
+  color: antiquewhite;
 }
