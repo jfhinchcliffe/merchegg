@@ -22,3 +22,22 @@
  .jumbotron{
   /*background-color: #FFBD7D;*/
 }
+
+.profile-card {
+  /*background-color: blue;*/
+  position: relative;
+}
+
+.profile-card p {
+  padding-right: 150px;
+  height: 80px;
+}
+
+.profile-card img {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 120px;
+  border-radius: 100%;
+  border: 1px solid slategrey;
+}

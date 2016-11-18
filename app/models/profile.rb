@@ -5,6 +5,7 @@ class Profile < ApplicationRecord
   validates_uniqueness_of :account_name
   validates :account_name,  presence: true, format: { with: /\A[a-z\d]*\Z/i, message: "only allows letters and numbers" }, length: { in: 6..20 }
   validates :about, length: { maximum: 500, too_long: "%{count} characters is the maximum allowed" }
+  validates :picture,  presence: true
 
   def init
     self.plan_type ||= 'basic' 

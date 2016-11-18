@@ -1,11 +1,11 @@
-<h1>Profiles Index Page</h1>
-
-<%= render 'profiles/profile_search' %>
-
-<% @profiles.each do |profile| %>
-  <p>
-    <%= link_to profile.account_name, profile_path(profile) %>
-    <%= truncate(profile.about, length: 100) %>
-    <%= image_tag(profile.picture_url(:thumbnail)) %>
-  </p>
-<% end %>
+<div class="row text-center">
+  <h1>Search Results...</h1>
+</div>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= render 'profile_card' %>
+  </div>
+  <div class="col-md-6 col-md-offset-3">
+    <%= render 'profiles/profile_search' %>
+  </div>
+</div>

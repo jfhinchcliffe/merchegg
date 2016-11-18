@@ -4,8 +4,12 @@ class ProfilesController < ApplicationController
   def index
     if params[:search]
       @profiles = Profile.search(params[:search][:query])
+      if @profiles.length == 0
+        flash[:warning] = "No results found..."
+        redirect_to root_path
+      end   
     else
-      @profiles = Profile.all
+      redirect_to root_path
     end  
   end
 
