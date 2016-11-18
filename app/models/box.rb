@@ -17,4 +17,9 @@ class Box < ApplicationRecord
       end
     end  
   end
+
+  def access?(user)
+    UserCodedBox.exists?(user_id: user.id, box_id: self.id) || self.user_id == user.id
+  end
+
 end

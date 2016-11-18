@@ -2,37 +2,23 @@
   <div class="jumbotron">
     <h1><%= @box.title %></h1>
     <p><%= @box.description %></p>
-    <p>By <%= @box.user.profile.account_name %></p>
-  </div>
+    <p>By <%= link_to @box.user.profile.account_name, profile_path(current_user) %>
+    <p><small><%= @box.items.count %> files</small></p>
+    <div class="text-right">
+    <%= render 'box_admin_functions' if current_user.owns?(@box)%>  
+    </div>
 </div>
 
-
-<div class="row col-md-6 col-md-offset-3 ">
-  <table class="table table-hover text-center">
-  <thead>
-    <tr>
-      <th class="text-center"><h2>File Name</h2></th>
-      <th class="text-center"><h2>Download</h2></th>  
-    </tr>
-  </thead>
-  <%= simple_form_for :code,  url: box_path(@box) , :method => :get do |f| %>
-    <%= f.input :code, :autofocus => true %>
-    <%= f.submit "Check Code" %>
-  <% end %>
-  <% if UserCodedBox.exists?(user_id: current_user.id, box_id: @box.id) || @box.user_id == current_user.id %>
-    <tbody>
-      <% @box.items.each do |item| %>
-      <tr>
-        <td><h4><%= item.name %></h4></td>
-        <td><%= link_to 'Download', "#{item.download_path}", download: "data", class: 'btn btn-primary' %></td>
-        <td></td>
-      </tr>  
-      <% end %>
-    </tbody>
-  </table>
-<% end %>  
-<p><%= link_to 'New Item', new_box_item_path(@box) %></p>
-<p><%= link_to "User Boxes", boxes_path %></p>
+<div class="row col-md-6 col-md-offset-3">
+  <% if @box.access?(current_user) %>
+    <%= render 'file_table' %>
+  <% else %>
+    <div class="row text-center text-info">
+      <h4>Enter code to access files.</h4>
+    </div>
+    <%= render 'code_form' %>
+  <% end %>    
 </div>
+
 
 

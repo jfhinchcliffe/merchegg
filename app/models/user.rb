@@ -13,6 +13,10 @@ class User < ApplicationRecord
     self.profile.account_name != nil
   end
 
+  def owns?(obj)
+    self.id == obj.user_id
+  end
+
   private
 
   def create_profile

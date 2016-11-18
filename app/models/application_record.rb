@@ -6,4 +6,5 @@ class ApplicationRecord < ActiveRecord::Base
     code = SecureRandom.hex(4)
     box.codes.create(code: code, expired: false)
   end
+
 end

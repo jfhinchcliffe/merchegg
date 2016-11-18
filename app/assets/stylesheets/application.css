@@ -15,5 +15,10 @@
  */
  body {
    padding-top: 60px;
+   padding-bottom: 60px;
    font-family: 'Titillium Web', sans-serif;
  }
+
+ .jumbotron{
+  /*background-color: #FFBD7D;*/
+}

@@ -1,0 +1,4 @@
+<%= simple_form_for :code,  url: box_path(@box) , :method => :get do |f| %>
+  <%= f.input :code, :autofocus => true, placeholder: 'Enter code...', label: false %>
+  <%= f.submit "Check Code", class: 'btn btn-block btn-info' %>
+<% end %>
