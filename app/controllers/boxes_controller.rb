@@ -1,10 +1,10 @@
 class BoxesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_box, only:[:show, :edit, :update, :payment]
+  before_action :set_box, only:[:show, :edit, :update, :payment, :sms]
 
   def index
     @boxes = current_user.boxes.all.includes(:codes)
-  end  
+  end
 
   def new
     @box = current_user.boxes.build
@@ -48,7 +48,31 @@ class BoxesController < ApplicationController
         format.html { render :edit }
       end
     end
-  end 
+  end
+
+  def sms
+    if @box.has_valid_codes?
+      to_number = params[:sms][:to_number]
+      @client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
+
+      code = @box.get_valid_code
+      begin 
+        @client.account.messages.create({
+          :from => '+61476856458',
+          :to => to_number, 
+          :body => "Follow the link to access your downloads: #{request.base_url}/boxes/#{@box.id}?utf8=✓&code%5Bcode%5D=#{code}&commit=Check+Code"
+        })
+        flash[:notice] = "Code #{code} sent to #{to_number} via sms"
+        redirect_to @box
+      rescue
+        flash[:warning] = "Something went wrong. Did you enter a valid number?"
+        redirect_to @box
+      end  
+    else  
+      flash[:warning] = "You have no more valid codes for this box"
+      redirect_to @box
+    end  
+  end  
 
   private
 

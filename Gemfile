@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.3.1'
 
+gem 'twilio-ruby'
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'

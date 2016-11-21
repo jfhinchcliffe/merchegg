@@ -16,8 +16,11 @@ Rails.application.routes.draw do
   resources :boxes do
     resources :items
     resources :codes
-  end  
-    
+    member do
+      post 'sms'
+    end
+  end
+  
   resources :payments, only: [:index, :new, :create]
 
   devise_for :users

@@ -4,8 +4,8 @@
     <p><%= @box.description %></p>
     <p>By <%= link_to @box.user.profile.account_name, profile_path(current_user) %>
     <p><small><%= @box.items.count %> files</small></p>
-    <div class="text-right">
-    <%= render 'box_admin_functions' if current_user.owns?(@box)%>  
+    <div class="text-center">
+        <%= render 'box_admin_functions' if current_user.owns?(@box)%>
     </div>
 </div>
 
