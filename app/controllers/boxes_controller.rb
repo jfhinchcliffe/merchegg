@@ -7,7 +7,12 @@ class BoxesController < ApplicationController
   end
 
   def new
-    @box = current_user.boxes.build
+    if current_user.can_build_box?
+      @box = current_user.boxes.build
+    else
+      flash[:danger] = "You have reached the limit for boxes on your plan type"
+      redirect_to current_user.profile
+    end    
   end
 
   def show

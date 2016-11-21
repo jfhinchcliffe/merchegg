@@ -17,6 +17,16 @@ class User < ApplicationRecord
     self.id == obj.user_id
   end
 
+  def can_build_box?
+    if self.profile.plan_type == 'basic' && self.boxes.count >= 3
+      return false
+    elsif self.profile.plan_type == 'pro' && self.boxes.count >= 6
+      return false
+    else
+      return true
+    end    
+  end  
+
   private
 
   def create_profile
