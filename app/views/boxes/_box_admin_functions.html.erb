@@ -1,16 +1,16 @@
 <div class="row text-left">
-  <div class='col-md-6'>
+  <div class='col-md-4 col-xs-12'>
   <h3 class="text-danger">Admin Functions</h3>
-    <%= link_to 'Upload New Item', new_box_item_path(@box), class: 'btn btn-default' %>
-    <%= link_to 'Review Box Codes', box_codes_path(@box), class: 'btn btn-default' %>
+    <%= link_to 'Upload New Item', new_box_item_path(@box), class: 'btn btn-lg btn-block btn-default' %>
+    <%= link_to 'Review Box Codes', box_codes_path(@box), class: 'btn btn-lg btn-block btn-default' %>
   </div>
 </div>  
 <div class="row">
-  <div class='col-md-4 text-left'>
+  <div class='col-md-4 text-left col-xs-12'>
     <h4 class="text-danger">Send code via SMS</h4>
     <%= simple_form_for :sms,  url: sms_box_path , :method => :post do |f| %>
-      <%= f.input :to_number, :autofocus => true, placeholder: 'Enter Number', label: false  %>
-      <%= f.submit "Send Code", class: 'btn btn-info' %>
+      <%= f.input :to_number, :autofocus => true, placeholder: 'Enter Valid Phone Number', label: false, class: 'input-lg'  %>
+      <%= f.submit "Send Code", class: 'btn btn-lg btn-block btn-info' %>
     <% end %>
   </div>
 </div>

@@ -34,6 +34,14 @@
   height: 100px;
 }
 
+.form-control {
+  height: 50px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}
+
 .profile-card img {
   position: absolute;
   top: 20px;
@@ -59,8 +67,16 @@
 }
 
 .navbar-default {
-  background-color: rgba(0, 0, 0, 0.00);
+  background-color: rgba(88, 51, 124, 0.88);
   border: 0;
+}
+
+.nav.navbar-nav li a {
+    color: antiquewhite;
+}
+
+.navbar-default .navbar-brand {
+    color: antiquewhite;
 }
 
 .front-page .row {
