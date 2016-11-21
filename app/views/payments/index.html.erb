@@ -1,10 +1,14 @@
+<div class='row text-center'>
+  <h1>Payments History for <%= link_to current_user.profile.account_name, profile_path(current_user.profile) %></h1>
+</div>  
+
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Date</th>
-      <th>Amount</th>
-      <th>Description</th>
-      <th>Payment ID</th>
+      <th><h3>Date</h3></th>
+      <th><h3>Amount</h3></th>
+      <th><h3>Description</h3></th>
+      <th><h3>Payment ID</h3></th>
     </tr>
   </thead>
   <tbody>

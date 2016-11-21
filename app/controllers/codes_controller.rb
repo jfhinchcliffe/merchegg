@@ -8,7 +8,7 @@ class CodesController < ApplicationController
 
   def find_box
     @box = Box.find(params[:box_id])
-  end  
+  end
 
- 
+
 end

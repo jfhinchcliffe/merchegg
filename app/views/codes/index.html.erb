@@ -1,11 +1,19 @@
-<h1>Codes for <%= link_to @box.title, box_path(@box) %></h1>
-
+<div class='row text-center'>
+  <h1>Codes for <%= link_to @box.title, box_path(@box) %></h1>
+  <h3>
+    Total Codes: <%= @codes.count %> | 
+    Used Codes: <%= @codes.where(expired: true).count %> | 
+    Codes SMS'd: <%= @codes.where(expired: false, sent_via_message: true).count %>
+  </h3>
+</div>
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Code</th>
-      <th>Expired</th>
-      <th>Sent via Message?</th>'
+      
+      <th><h3>Code</h3></th>
+      <th><h3>Expired</h3></th>
+      <th><h3>Sent via Message?</h3></th>
+      
     </tr>
   </thead>
   <tbody>
