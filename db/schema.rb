@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161121024636) do
+ActiveRecord::Schema.define(version: 20161121035256) do
 
   create_table "boxes", force: :cascade do |t|
     t.integer  "user_id"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20161121024636) do
     t.datetime "updated_at",      null: false
     t.datetime "plan_expiration"
     t.string   "picture"
+    t.integer  "text_count"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 

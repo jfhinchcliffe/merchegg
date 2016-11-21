@@ -9,11 +9,27 @@ class Profile < ApplicationRecord
 
   def init
     self.plan_type ||= 'basic' 
+    self.text_count ||= 0
   end
+
+  def can_text?
+    if self.plan_type == 'basic' && self.text_count >= 5
+      return false
+    elsif self.plan_type == 'pro' && self.text_count >= 10
+      return false
+    else
+      return true
+    end    
+  end  
 
   def self.search(pattern)
     where('account_name LIKE ?', "%#{pattern}%")
   end
+
+  def add_text_count
+    self.text_count += 1
+    self.save
+  end  
 
   def subscribe
     self.update(plan_type: 'pro')
