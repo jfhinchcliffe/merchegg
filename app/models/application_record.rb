@@ -4,7 +4,7 @@ class ApplicationRecord < ActiveRecord::Base
 
   def create_a_code(box)
     code = SecureRandom.hex(4)
-    box.codes.create(code: code, expired: false)
+    box.codes.create(code: code, expired: false, sent_via_message: false)
   end
 
 end

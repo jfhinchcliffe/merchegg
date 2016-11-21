@@ -1,2 +1,21 @@
-<h1>Codes#index</h1>
-<p>Find me in app/views/codes/index.html.erb</p>
+<h1>Codes for <%= link_to @box.title, box_path(@box) %></h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Expired</th>
+      <th>Sent via Message?</th>'
+    </tr>
+  </thead>
+  <tbody>
+    <% @codes.each do |code| %>
+    <tr>
+      <td><%= code.code %></td>
+      <td><%= code.expired %></td>
+      <td><%= code.sent_via_message %></td>
+    </tr>  
+    <% end %>
+  </tbody>
+
+</table>

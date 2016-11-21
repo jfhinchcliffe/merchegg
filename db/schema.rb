@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161117005724) do
+ActiveRecord::Schema.define(version: 20161121024636) do
 
   create_table "boxes", force: :cascade do |t|
     t.integer  "user_id"
@@ -24,9 +24,10 @@ ActiveRecord::Schema.define(version: 20161117005724) do
   create_table "codes", force: :cascade do |t|
     t.integer  "box_id"
     t.string   "code"
-    t.boolean  "expired",    default: true
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.boolean  "expired",          default: true
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.boolean  "sent_via_message"
     t.index ["box_id"], name: "index_codes_on_box_id"
   end
 

@@ -19,11 +19,14 @@ class Box < ApplicationRecord
   end  
 
   def get_valid_code
-    self.codes.where(expired: false).first.code
+    p = self.codes.where(expired: false, sent_via_message: false).first
+    p.sent_via_message = true
+    p.save
+    p.code
   end
 
   def has_valid_codes?
-    self.codes.where(expired: false).count > 1
+    self.codes.where(expired: false, sent_via_message: false).count > 1
   end    
 
   def access?(user)
