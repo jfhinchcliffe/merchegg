@@ -95,3 +95,28 @@
   letter-spacing: 2px;
   color: antiquewhite;
 }
+
+.box-card {
+  background-color:#f0f0f0;
+  border-radius: 6px;
+  padding: 10px;
+  margin-top: .5em;
+}
+
+.amount h3 {
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.box-card h3 {
+  font-family: 'Titillium Web', sans-serif;
+  color: black;
+}
+
+h1, h2, h3{
+  /*font-family: 'Bungee Inline';*/
+  font-family: 'Baloo Bhaina';
+}
+
+.main-title {
+  font-family: 'Permanent Marker';
+}

@@ -1,21 +1,21 @@
-<div class="row">
-  <div class="col-md-4 col-md-offset-2">
-    <h3>Total Boxes: <%= current_user.boxes.count %></h3>
-    <h3>Total SMS's sent: <%= current_user.profile.text_count %>
-    <h3>Plan Type: <%= @profile.plan_type.capitalize %>
-    <h4><%= "Expires: #{format_date(@profile.plan_expiration)}" if @profile.plan_type == 'pro' %> </h4>
-    <%= render 'payments/new' %>
-  </div>  
+<div class="jumbotron">
+  <div class='container'>
+    <div class="col-md-6 ">
+      <h2 class='text-center'>Account Information</h2>
+      <h3>Total Boxes: <%= current_user.boxes.count %></h3>
+      <h3>Total SMS's sent: <%= current_user.profile.text_count %></h3>
+      <h3>Plan Type: <%= @profile.plan_type.capitalize %></h3>
+      <h3>Expires: <%= "#{format_date(@profile.plan_expiration)}" if @profile.plan_type == 'pro' %></h3>
+      <%= render 'payments/new' %>
+    </div>  
 
 
-  <div class="col-md-4">
-    <h3>Admin Functions</h3>
-      <%= link_to 'Add New Box', new_box_path, class: 'btn btn-block btn-primary' %>
-      <%= link_to 'Manage Boxes', boxes_path, class: 'btn btn-block btn-primary' %> 
-      <%= link_to 'Edit Profile Information', edit_profile_path(@profile), class: 'btn btn-block btn-primary' %>
-      <%= link_to 'Check My Previous Payments', payments_path, class: 'btn btn-block btn-primary' %>  
-  </div>   
-</div>
-<div class="row text-center"> 
-  <h3>My Boxes</h3>
+    <div class="col-md-6">
+      <h3 class='text-center'>Admin Functions</h3>
+        <%= link_to 'Add New Box', new_box_path, class: 'btn btn-block btn-lg btn-primary' %>
+        <%= link_to 'Manage Boxes', boxes_path, class: 'btn btn-block btn-lg btn-primary' %> 
+        <%= link_to 'Edit Profile Information', edit_profile_path(@profile), class: 'btn btn-block btn-lg btn-primary' %>
+        <%= link_to 'Check Previous Payments', payments_path, class: 'btn btn-block btn-lg btn-primary' %>  
+    </div>  
+  </div> 
 </div>

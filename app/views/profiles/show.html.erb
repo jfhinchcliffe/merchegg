@@ -12,7 +12,5 @@
   </div>
 </div>
 <%= render 'logged_in_user_profile' if current_user == @profile.user%>
-
-<div class="row text-center">
-  <%= render @profile.user.boxes %>
-</div>
+<h1 class='text-center'>User Boxes</h1>
+<%= render @profile.user.boxes %>
