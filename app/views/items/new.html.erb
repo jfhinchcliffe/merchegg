@@ -2,9 +2,10 @@
   <h1>Upload file for <%=@box.title %></h1>
 </div>
 <div class="row col-md-6 col-md-offset-3">
+  <h4>An 'Item' is a file that lives in a box. When you give people access to a box via a code, they will be able to download these items</h4>
   <%= render 'form' %>
 </div>
 
 <div class="row col-md-6 col-md-offset-3">
-  <%= link_to 'Back', box_path(@box)%>
+  <h4><%= link_to 'Back', box_path(@box)%></h4>
 </div>
