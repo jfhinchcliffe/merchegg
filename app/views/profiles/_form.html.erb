@@ -3,6 +3,8 @@
     <%= f.input :account_name, label: false, placeholder: 'Enter an account name' %>
     <%= f.input :about, label: false, input_html: {rows: 5}, placeholder: 'Add some information about yourself' %>
     <%= f.input :picture, label: 'Select Profile Picture', input_html: { style: 'display: none' }, label_html: { class: "btn btn-info btn-lg btn-block" } %>
+    <%= f.input :twitter, label: false, placeholder: 'Enter your Twitter account URL' %>
+    <%= f.input :facebook, label: false, placeholder: 'Enter your Facebook account URL' %>
     <%= f.button :submit, class: 'btn-block btn-lg btn-primary' %>
   <% end %>
 </div>

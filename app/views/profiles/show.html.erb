@@ -4,6 +4,8 @@
       <div class="col-md-6">
         <h1><%= @profile.account_name %></h1>
         <p><%= @profile.about %></p>
+        <h2><%= link_to '', "#{@profile.twitter}", class: "fa fa-twitter" %></h2>
+        <h2><%= link_to '', "#{@profile.facebook}", class: "fa fa-facebook" %></h2>
       </div>
       <div class="col-md-6 text-center">
         <h1><%= image_tag(@profile.picture_url(:standard)) %></h1>
