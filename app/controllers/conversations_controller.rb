@@ -2,10 +2,6 @@ class ConversationsController < ApplicationController
   
   def new
     @conversation = Conversation.create(sender: current_user.id, receiver: params[:messaging])
-    # @conversation = Conversation.new
-    # @conversation.sender = current_user.id
-    # @conversation.receiver = params[:messaging]
-    # @conversation.save
     @from = User.find(@conversation.sender)
     @to = User.find(@conversation.receiver)
     @message = @conversation.messages.build
@@ -39,8 +35,4 @@ class ConversationsController < ApplicationController
     def conversation_params
       params.require(:conversation).permit(:sender, :receiver)
     end
-
-
-
-
 end
