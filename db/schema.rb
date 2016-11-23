@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161122044207) do
+ActiveRecord::Schema.define(version: 20161123050044) do
 
   create_table "boxes", force: :cascade do |t|
     t.integer  "user_id"
@@ -31,6 +31,13 @@ ActiveRecord::Schema.define(version: 20161122044207) do
     t.index ["box_id"], name: "index_codes_on_box_id"
   end
 
+  create_table "conversations", force: :cascade do |t|
+    t.integer  "sender"
+    t.integer  "receiver"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "items", force: :cascade do |t|
     t.integer  "box_id"
     t.string   "name"
@@ -38,6 +45,14 @@ ActiveRecord::Schema.define(version: 20161122044207) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["box_id"], name: "index_items_on_box_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string   "content"
+    t.integer  "conversation_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
   end
 
   create_table "payments", force: :cascade do |t|

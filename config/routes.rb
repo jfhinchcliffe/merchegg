@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :conversations do
+    resources :messages
+  end
+  
   get 'codes/index'
 
   get 'payments/new'

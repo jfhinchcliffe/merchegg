@@ -1,0 +1,10 @@
+<%= simple_form_for @conversation do |f| %>
+  <%= f.input :sender %>
+  <%= f.input :receiver %>
+  <%= f.button :submit, class: 'btn-block btn-primary btn-lg' %>
+<% end %>
+
+<%= simple_form_for [@conversation, @message] do |f| %>
+  <%= f.input :content %>
+  <%= f.button :submit, class: 'btn-block btn-primary btn-lg' %>
+<% end %>
