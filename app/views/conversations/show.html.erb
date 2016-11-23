@@ -2,12 +2,13 @@
   <div class='col-md-6 col-md-offset-3'>
     <h3>From: <%= @from.profile.account_name %> To: <%= @to.profile.account_name %></h3>
     <% @conversation.messages.each do |message| %>
-      <div class='row'>
-        <div class='text-center'><%= message.created_at %></div>
+      <div class='row conversation-pane'>
+        Sent: <%= message.created_at %>
         <h3><%= message.content %></h3>
       </div>  
     <% end %>
-
     <%= render 'messages/new' %>
 
-<h4><%= link_to 'Back', conversations_path %></h4>
+    <h4><%= link_to 'Back', conversations_path %></h4>
+  </div>
+</div>   

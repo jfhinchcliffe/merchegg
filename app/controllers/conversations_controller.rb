@@ -1,19 +1,20 @@
 class ConversationsController < ApplicationController
   
   def new
-    @conversation = Conversation.new
-    @conversation.sender = current_user.id
-    @conversation.receiver = params[:messaging]
-    @conversation.save
+    @conversation = Conversation.create(sender: current_user.id, receiver: params[:messaging])
+    # @conversation = Conversation.new
+    # @conversation.sender = current_user.id
+    # @conversation.receiver = params[:messaging]
+    # @conversation.save
     @from = User.find(@conversation.sender)
-    @to = Profile.find(@conversation.receiver).user
+    @to = User.find(@conversation.receiver)
     @message = @conversation.messages.build
   end  
 
   def show
     @conversation = Conversation.find(params[:id])
     @from = User.find(@conversation.sender)
-    @to = Profile.find(@conversation.receiver).user
+    @to = User.find(@conversation.receiver)
     @message = @conversation.messages.build
   end  
 

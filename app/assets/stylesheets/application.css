@@ -26,7 +26,6 @@
 }
 
 .profile-card {
-  /*background-color: blue;*/
   position: relative;
 }
 
@@ -120,4 +119,15 @@ h1, h2, h3{
 
 .main-title {
   font-family: 'Permanent Marker';
+}
+
+.conversation-pane {
+  background-color: antiquewhite;
+  padding: 1em;
+  margin: 1em;
+  border-radius: 6px;
+}
+
+.conversation-pane h3 {
+  font-family: 'Titillium Web', sans-serif;
 }
