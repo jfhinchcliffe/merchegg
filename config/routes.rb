@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :conversations do
     resources :messages
   end
-  
+  get '/usercodedboxes', to: 'user_coded_boxes#index'
   get 'codes/index'
 
   get 'payments/new'

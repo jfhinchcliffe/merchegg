@@ -3,7 +3,6 @@ class Box < ApplicationRecord
   validates_presence_of :title
   has_many :items
   has_many :codes
-  # after_save populate_codes
   after_save :populate_codes
 
   def populate_codes

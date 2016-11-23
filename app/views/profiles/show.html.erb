@@ -4,8 +4,8 @@
       <div class="col-md-6">
         <h1><%= @profile.account_name %></h1>
         <p><%= @profile.about %></p>
-        <h2><%= link_to '', "#{@profile.twitter}", class: "fa fa-twitter" %></h2>
-        <h2><%= link_to '', "#{@profile.facebook}", class: "fa fa-facebook" %></h2>
+        <h2><%= link_to '', "#{@profile.twitter}", class: "fa fa-twitter" if @profile.twitter.present? %></h2>
+        <h2><%= link_to '', "#{@profile.facebook}", class: "fa fa-facebook" if @profile.twitter.present? %></h2>
         <h2><%= link_to '', new_conversation_path(messaging: @profile.user.id), class: "fa fa-envelope" %></h2>
       </div>
       <div class="col-md-6 text-center">

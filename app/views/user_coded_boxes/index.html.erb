@@ -1,0 +1,21 @@
+<div class='row col-md-6 col-md-offset-3'>
+  <h2 class='text-center'>Accessible Boxes</h2>    
+  <table class="table table-hover text-center">
+    <thead>
+      <tr>
+        <th><h3 class='text-center'>Box Name</h3></th>
+        <th><h3 class='text-center'>Box Owner</h3></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @usercodedboxes.each do |usercodedbox| %>
+      <tr>
+        <% @box = Box.find(usercodedbox.box_id) %>
+        <td><h4><%= link_to @box.title, box_path(@box) %></h4></td>
+        <td><h4><%= usercodedbox.user.profile.account_name %></h4></td>
+      </tr>  
+      <% end %>
+    </tbody>
+  </table>
+  <h4><%= link_to 'Back', profile_path(current_user.profile)%></h4>
+</div>
