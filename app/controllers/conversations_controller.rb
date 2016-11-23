@@ -5,6 +5,15 @@ class ConversationsController < ApplicationController
     @conversation.sender = current_user.id
     @conversation.receiver = params[:messaging]
     @conversation.save
+    @from = User.find(@conversation.sender)
+    @to = Profile.find(@conversation.receiver).user
+    @message = @conversation.messages.build
+  end  
+
+  def show
+    @conversation = Conversation.find(params[:id])
+    @from = User.find(@conversation.sender)
+    @to = Profile.find(@conversation.receiver).user
     @message = @conversation.messages.build
   end  
 

@@ -1,10 +1,7 @@
-<%= simple_form_for @conversation do |f| %>
-  <%= f.input :sender %>
-  <%= f.input :receiver %>
-  <%= f.button :submit, class: 'btn-block btn-primary btn-lg' %>
-<% end %>
+<div class='row'>
+  <div class='col-md-6 col-md-offset-3'>
+    <h3>Message to: <%= @to.profile.account_name %></h3>
 
-<%= simple_form_for [@conversation, @message] do |f| %>
-  <%= f.input :content %>
-  <%= f.button :submit, class: 'btn-block btn-primary btn-lg' %>
-<% end %>
+    <%= render 'messages/new' %>
+  </div>
+</div>    
