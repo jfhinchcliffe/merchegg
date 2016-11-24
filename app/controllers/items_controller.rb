@@ -21,7 +21,7 @@ class ItemsController < ApplicationController
       redirect_to @box
     else
       render 'new'
-    end    
+    end
   end
 
   def update
