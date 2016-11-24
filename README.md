@@ -23,9 +23,7 @@ A service that allows artists to upload files / songs / pictures etc. and instea
 - navigate to localhost:3000 to see project in action!
 
 ### Assignment Criteria 📑
-- ✔️ = Done 😊
-- ❌ = Not Done 😞
-- ❎ = Kinda Done 😑
+✔️ = Done 😊 | ❌ = Not Done 😞 | ❎ = Kinda Done 😑
 
 - ✔️ Design Documentation
 - ✔️ One page summary of your application including problem definition, solution.
