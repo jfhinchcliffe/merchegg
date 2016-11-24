@@ -6,10 +6,9 @@ class ProfilesController < ApplicationController
       @profiles = Profile.search(params[:search][:query])
       if @profiles.length == 0
         flash[:warning] = "No results found..."
-        redirect_to root_path
       end   
     else
-      redirect_to root_path
+      @profiles = Profile.all
     end  
   end
 

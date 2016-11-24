@@ -26,12 +26,24 @@
 }
 
 .profile-card {
-  position: relative;
+  /*position: relative;*/
+  border-radius: 6px;
+  margin-top: 10px;
+  padding: 5px;
+  background-color: antiquewhite;
 }
 
 .profile-card p {
-  padding-right: 150px;
-  height: 100px;
+}
+
+.profile-card img {
+  /*position: absolute;
+  top: 20px;
+  right: 0px;*/
+  height: 120px;
+  width: 120px;
+  border-radius: 100%;
+  border: 1px solid slategrey;
 }
 
 .form-control {
@@ -42,15 +54,6 @@
   border-radius: 6px;
 }
 
-.profile-card img {
-  position: absolute;
-  top: 20px;
-  right: 0px;
-  height: 120px;
-  width: 120px;
-  border-radius: 100%;
-  border: 1px solid slategrey;
-}
 
 .front-page{
   background-color: black;
