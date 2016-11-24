@@ -89,3 +89,5 @@ Trello Contains:
 - Better define difference between Pro and Basic plans
 - Better authorisation rather than constantly querying if current user owns the object
 - Transactional emails and distribution of codes (ran out of time)
+- Add FriendlyID
+- Set username in stone?
