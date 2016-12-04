@@ -27,11 +27,11 @@ A service that allows artists to upload files / songs / pictures etc. and instea
 
 - ✔️ Design Documentation
 - ✔️ One page summary of your application including problem definition, solution.
-- ❌ A workflow diagram of the user journey/s. (User stories in Trello, but no diagram)
+- ❎ A workflow diagram of the user journey/s. (User stories in Trello, but no diagram)
 - ✔️ Wireframes for at least 5 screens.
 - ✔️ User stories for the whole application.
 - ✔️ Entity Relationship Diagram (ERD).
-- ❌ Project plan and estimation. (Planned, but couldn't estimate as I didn't know how long thigns would take)
+- ❌ Project plan and estimation. (Planned, but couldn't estimate as I didn't know how long things would take)
 - ✔️ Trello or similar project management tool to be used to track progress of build.
 - ❌ Show evidence of Slack conversations or use of other communication tools. (Talked about it... verbally. No evidence though!)
 - ❌ Code review. Demonstrate that you have had your code reviewed by other students and that you have provided a code review for others. (Ran out of time for this)
@@ -44,11 +44,11 @@ A service that allows artists to upload files / songs / pictures etc. and instea
 - ✔️ Use environmental variables to protect API keys etc.
 - ✔️ Implement a payment system for your product.
 - ❌ Your app must send transactional emails (eg. using Mailgun). (Ran out of time)
-- ❎ Your app should have an internal user messaging system. (works, but not pretty!)
+- ️✔️ Your app should have an internal user messaging system. (works, but not pretty!)
 - ✔️ Your app will have some type of searching, sorting and or filtering capability.
 - ✔️ Your app will have some type of file uploading capability (eg. images).
 - ✔️ Your app will have authentication (eg. Devise, must have full functionality in place).
-- ❎ Your app will have authorisation (users have restrictions on what they can see and edit). (basic implementation)
+- ❎ Your app will have authorisation (users have restrictions on what they can see and edit). (basic implementation where users can only edit what they own)
 - ❌ Your app will have an admin dashboard for the admin user to administrate the site. (Ran out of time to implement an overall admin dash. Been administrating through console)
 - ✔️ Document your application with a README that explains how to setup, configure and use your application.
 
@@ -91,3 +91,4 @@ Trello Contains:
 - Transactional emails and distribution of codes (ran out of time)
 - Add FriendlyID
 - Set username in stone?
+- Testing
