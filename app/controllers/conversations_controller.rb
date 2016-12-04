@@ -1,4 +1,5 @@
 class ConversationsController < ApplicationController
+  before_action :authenticate_user!
   
   def new
     @conversation = Conversation.create(sender: current_user.id, receiver: params[:messaging])
